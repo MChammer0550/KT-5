@@ -1,0 +1,185 @@
+body {
+	background-image: url(road.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100vh;
+	overflow: hidden;
+}
+
+.tree{
+	width: 250px;
+	height: 300px;
+	right: 100px;
+	bottom: 200px;
+	position: absolute;
+	animation: opacity-2 1s ease-in forwards;
+}
+.house{
+	width: 250px;
+	height: 300px;
+	left: 100px;
+	bottom: 230px;
+	opacity: 0;
+	position: absolute;
+	animation: opacity-2 1s ease-in forwards;
+	animation-delay: 1s;
+	transform-origin: bottom;
+}
+.sun-center{
+	width: 200px;
+	height: 200px;
+	position: absolute;
+	top: -20px;
+	right: -20px;
+	z-index: 1;
+	animation: rotation-b 10s linear infinite;
+}
+.lights{
+	width: 1px;
+	height: 1px;
+	position: absolute;
+	top: 65px;
+	right: 240px;
+	animation: rotation 10s linear infinite;
+	transform-origin: 175px 0px;
+}
+.light1{
+	width: 350px;
+	height: 10px;
+	border-radius: 50%;
+	position: absolute;
+	transform: rotate(0);
+	background-color: yellow;
+}
+.light2{
+	width: 350px;
+	height: 10px;
+	border-radius: 50%;
+	position: absolute;
+	transform: rotate(45deg);
+	background-color: yellow;
+}
+.light3{
+	width: 350px;
+	height: 10px;
+	border-radius: 50%;
+	position: absolute;
+	transform: rotate(90deg);
+	background-color: yellow;
+}
+.light4{
+	width: 350px;
+	height: 10px;
+	border-radius: 50%;
+	position: absolute;
+	transform: rotate(-45deg);
+	background-color: yellow;
+}
+
+.part {
+	width: 200px;
+	height: 180px;
+	background-color: salmon;
+	background-size: contain;
+	background-repeat: no-repeat;
+	clip-path: polygon(
+		0 50%,
+		20% 50%,
+		20% 25%,
+		80% 25%,
+		80% 50%,
+		100% 50%,
+		100% 100%,
+		0 100%
+	);
+}
+.wheel {
+	animation: rotation 0.1s linear infinite;
+	background-image: url(wheel.png);
+	background-size: cover;
+	border-radius: 100%;
+	position: absolute;
+
+	width: 85px;
+ height: 85px;
+  top: 145px;
+  left: -16px; 
+
+	/* ДЛЯ СЮРПРИЗА */
+	/* top: 20px;
+	left: 18px;
+	width: 60px;
+	height: 60px; */
+}
+.right {
+	position: absolute;
+
+	left: 130px;
+
+	/* ДЛЯ СЮРПРИЗА */
+	/* left: 136px; */
+}
+
+.animation {
+	position: absolute;
+	animation: slide 4s ease-out forwards infinite;
+	animation-delay: 2s;
+	width: 200px;
+	left: -100%;
+
+	bottom: 70px;
+
+	/* ДЛЯ СЮРПРИЗА */
+	/* bottom: -70px; */
+}
+@keyframes opacity{
+	0%{
+		opacity: 0;
+	}
+	100%{
+		opacity: 100%;
+	}
+}
+@keyframes opacity-2{
+	0%{
+		opacity: 0;
+		transform: scaleY(0);
+	}
+	100%{
+		opacity: 100%;
+		transform: scaleY(1);
+	}
+}
+@keyframes rotation {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+@keyframes rotation-b{
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(-360deg);
+	}
+}
+@keyframes slide {
+	0% {
+		left: -100%;
+	}
+	33% {
+		left: calc(100vw - 50px - 200px);
+		transform: scaleY(1);
+	}
+	66% {
+		left: calc(100vw - 50px - 200px);
+		transform: scaleX(-1);
+	}
+	100% {
+		left: -100%;
+		transform: scaleX(-1);
+	}
+}
